@@ -1,0 +1,7 @@
+-I/usr/include/c++/10
+-I/usr/include/c++/10/x86_64-redhat-linux
+-I/usr/include/c++/10/backward
+-I/usr/lib/gcc/x86_64-redhat-linux/10/include
+-I/usr/local/include
+-I/usr/include
+-I/home/ehu/Documents/Cpp/farm-simulator
