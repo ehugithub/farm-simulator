@@ -5,9 +5,9 @@ using namespace std;
 
 int main()
 {	
-	int num;
-	scanf("%d", &num);
-	cout << num << endl;
+	cout << "Welcome to farm simulator!" << endl;
+	animal cow1 ("Obi Wan", "Cow");
+	cow1.display();
 	
 	
 	return 0;

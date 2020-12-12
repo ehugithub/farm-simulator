@@ -12,6 +12,7 @@ class animal {
 		void feed (void);
 		void kill (void);
 		animal(std::string namev, std::string speciesv);
+		void display (void);
 } ;
 
  
