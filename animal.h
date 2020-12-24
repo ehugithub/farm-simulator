@@ -11,8 +11,9 @@ class animal {
 	public:
 		void feed (void);
 		void kill (void);
-		animal(std::string namev, std::string speciesv);
 		void display (void);
+		
+		animal(std::string namev, std::string speciesv);
 } ;
 
  

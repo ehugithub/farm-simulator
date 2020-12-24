@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=
-Date                   :=12/12/20
+Date                   :=23/12/20
 CodeLitePath           :=/home/ehu/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/animal.cpp$(ObjectSuffix) $(IntermediateDirectory)/crop.cpp$(ObjectSuffix) 
 
 
 
@@ -96,6 +96,18 @@ $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ehu/Documents/Cpp/farm-simulator/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/animal.cpp$(ObjectSuffix): animal.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/animal.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/animal.cpp$(DependSuffix) -MM animal.cpp
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ehu/Documents/Cpp/farm-simulator/animal.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/animal.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/animal.cpp$(PreprocessSuffix): animal.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/animal.cpp$(PreprocessSuffix) animal.cpp
+
+$(IntermediateDirectory)/crop.cpp$(ObjectSuffix): crop.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/crop.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/crop.cpp$(DependSuffix) -MM crop.cpp
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ehu/Documents/Cpp/farm-simulator/crop.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/crop.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/crop.cpp$(PreprocessSuffix): crop.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/crop.cpp$(PreprocessSuffix) crop.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

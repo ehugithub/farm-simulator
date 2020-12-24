@@ -8,6 +8,10 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="crop.cpp"/>
+    <File Name="crop.h"/>
+    <File Name="animal.cpp"/>
+    <File Name="animal.h"/>
     <File Name="main.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
